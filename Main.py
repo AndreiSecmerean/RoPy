@@ -10,7 +10,7 @@ import logging
 import shutil
 from venv import logger
 import random
-
+import pandas as pd
 
 tkinter.Tk().withdraw() # prevents an empty tkinter window from appearing
 JPG_DIR = Path(filedialog.askdirectory())
@@ -21,6 +21,8 @@ RAW_DIR = Path(filedialog.askdirectory())
 tkinter.Tk().withdraw() # prevents an empty tkinter window from appearing
 DESTINATION_FOLDER = Path(filedialog.askdirectory())
 
+Destinations = {'JPG_DIR': JPG_DIR, 'RAW_DIR': RAW_DIR, 'DESTINATION_DIR': DESTINATION_FOLDER}
+pd.DataFrame(Destinations)
 
 
 def GetFileNames(workingDir, trim):
